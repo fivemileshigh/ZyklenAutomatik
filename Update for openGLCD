@@ -1,0 +1,30 @@
+It seems the GLCD library doesn't work with the code as written in Arduino IDE 1.8.8, so I updated it to work with openGLCD. 
+This allows it to upload to Mega however the menu system is broken.
+
+Perhaps someone smarter than myself can fix it?
+
+
+Here is the error messages when uploading:
+
+
+In file included from /Users/florian/Documents/Arduino/ZyklenAutomatik_v0.2/Version 0.2/Bresenham_Shield_v0.2/Bresenham_Shield_v0.2.ino:25:0:
+/var/folders/zt/_tgl1nxd0vg9g5p0yd9gydpc0000gn/T/arduino_build_996951/sketch/ZyklenAutomatik_Config.h:129:69: warning: missing initializer for member 'GLOBAL_FLAGS::key_pressed' [-Wmissing-field-initializers]
+ struct GLOBAL_FLAGS status = {FALSE, FALSE, FALSE, FALSE,FALSE,FALSE};
+                                                                     ^
+/var/folders/zt/_tgl1nxd0vg9g5p0yd9gydpc0000gn/T/arduino_build_996951/sketch/ZyklenAutomatik_Config.h:129:69: warning: missing initializer for member 'GLOBAL_FLAGS::goback_trigger' [-Wmissing-field-initializers]
+/var/folders/zt/_tgl1nxd0vg9g5p0yd9gydpc0000gn/T/arduino_build_996951/sketch/ZyklenAutomatik_Config.h:129:69: warning: missing initializer for member 'GLOBAL_FLAGS::dir' [-Wmissing-field-initializers]
+/Users/florian/Documents/Arduino/ZyklenAutomatik_v0.2/Version 0.2/Bresenham_Shield_v0.2/Bresenham_Shield_v0.2.ino: In function 'void speed_cntr_Move(int, unsigned int)':
+/Users/florian/Documents/Arduino/ZyklenAutomatik_v0.2/Version 0.2/Bresenham_Shield_v0.2/Bresenham_Shield_v0.2.ino:831:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if( srd.step_delay <= srd.min_delay){
+                      ^
+/Users/florian/Documents/Arduino/ZyklenAutomatik_v0.2/Version 0.2/Bresenham_Shield_v0.2/Bresenham_Shield_v0.2.ino: In function 'void __vector_17()':
+/Users/florian/Documents/Arduino/ZyklenAutomatik_v0.2/Version 0.2/Bresenham_Shield_v0.2/Bresenham_Shield_v0.2.ino:916:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   else if(new_step_delay <= srd.min_delay) {
+                          ^
+/Users/florian/Documents/Arduino/ZyklenAutomatik_v0.2/Version 0.2/Bresenham_Shield_v0.2/Bresenham_Shield_v0.2.ino:884:22: warning: unused variable 'backlash_count_stepdelay' [-Wunused-variable]
+  static unsigned int backlash_count_stepdelay = 0;
+                      ^
+/Users/florian/Documents/Arduino/ZyklenAutomatik_v0.2/Version 0.2/Bresenham_Shield_v0.2/Bresenham_Shield_v0.2.ino: In function 'long int read_edit_number()':
+/Users/florian/Documents/Arduino/ZyklenAutomatik_v0.2/Version 0.2/Bresenham_Shield_v0.2/Bresenham_Shield_v0.2.ino:1071:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
